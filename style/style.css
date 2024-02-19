@@ -5,3 +5,8 @@
 .hr-dot{
     border-top: 1px dashed rgb(197, 190, 190);
 }
+.vl {
+    border-left: 1px dashed rgb(236, 227, 227) ;
+    height: 800px;
+    margin: auto 0;
+  }
