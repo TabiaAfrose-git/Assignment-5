@@ -13,8 +13,8 @@
     height: 800px;
     margin: auto 0;
   }
-  .flex-s{
+  .seat-selector{
+      padding: 10px;
       display: flex;
       justify-content: space-around;
-
   }
