@@ -295,7 +295,30 @@
                             <div class="text-sm font-bold my-2">Email ID</div>
                             <input type="email" placeholder="Enter your email id" class="input input-bordered w-full max-w-xs bg-white" />
                         </div>
-                        <button onclick="checkNameAndPhone()" class="btn bg-green-500 px-36 border-none text-white my-5">Next</button>
+                            <!-- Open the modal using ID.showModal() method -->
+                            <button class="btn bg-green-400 border-none text-white px-36    my-5" onclick="my_modal_5.showModal() "> Next
+                            </button>
+                            <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+                                <div class="modal-box bg-white">
+                                    <div class="flex flex-col justify-center items-center">
+                                        <div class="mt-5">
+                                            <img src="./images/success.png" alt="">
+                                        </div>
+                                        <div class="mt-5 text-green-500 font-semibold">
+                                            SUCCESS
+                                        </div>
+                                        <div class="item text-center m-5 text-black">
+                                            Thank you for Booking Our Bus Seats.<br>
+                                            We are working hard to find the best service and deals for you. <br>
+                                            <small class="text-black opacity-40"> Shortly you will find a confirmation in your email.</small>
+                                        </div>
+                                        <form method="dialog">
+                                            <!-- if there is a button in form, it will close the modal -->
+                                            <button class="btn b bg-green-500 text-white px-20 rounded-3xl border-green-500">Continue</button>
+                                        </form>
+                                    </div>
+                                </div>
+                        </dialog>
                         <div class="flex justify-between text-slate-400">
                             <a href=""><small>Terms and Conditions</small></a>
                             <a href=""><small>Cancellation Policy</small></a>
@@ -303,26 +326,8 @@
                     </div>
                 </div>
             </div>
-
         </section>
-        <!-- success -->
-        <section id="success" class="succes flex justify-center pt-10 hidden">
-            <div class="bg-slate-100 rounded-3xl p-10 w-2/4">
-                <div class="flex flex-col justify-center items-center">
-                    <div class="mt-5"><img src="./images/success.png" alt=""></div>
-                    <div class="mt-5 text-green-500 font-semibold">SUCCESS</div>
-                    <div class="item text-center m-5 text-black">
-                        Thank you for Booking Our Bus Seats.<br>
-                        We are working hard to find the best service and deals for you. <br>
-                        <small class="text-black opacity-40"> Shortly you will find a confirmation in your email.</small>
-                    </div>
-                    <div class="pb-5"> <button class="btn bg-green-500 text-white px-20 rounded-3xl border-green-500">Continue</button></div>
 
-                </div>
-
-            </div>
-
-        </section>
     </main>
     <footer id="footer" class="footer p-10 bg-black text-white">
         <aside>
@@ -339,7 +344,7 @@
             </div>
         </div>
         </nav>
-      </footer>
-      <script src="js/index.js"></script>
+    </footer>
+    <script src="js/index.js"></script>
 </body>
 </html>

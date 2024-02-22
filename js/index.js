@@ -8,9 +8,9 @@ for(const s of allSeat){
         const seatName = event.target.parentNode.childNodes[0].innerText;
         const seatType = "Economoy";
         const price = 550;
-        // add item  by Js(div -> p1 -> p2 -> p3 and append in)
+
         const selectedSeatContainer = document.getElementById("selected-seat-container");
-        console.log(event.target.parentNode.parentNode.setAttribute("disabled",false));
+        event.target.setAttribute("disabled",false);
 
         const firstSeatCounter = getConvertedValue("seat-count");
         if((firstSeatCounter+1) > 4){
@@ -29,7 +29,7 @@ for(const s of allSeat){
         const seatCount = parseInt(document.getElementById("seat-count").innerText);
         document.getElementById("seat-count").innerText = seatCount+1;
 
-
+        // add item  by Js(div -> p1 -> p2 -> p3 and append in)
         const div = document.createElement("div");
         div.classList.add("seat-selector")
         const p1 = document.createElement("p");
@@ -46,35 +46,7 @@ for(const s of allSeat){
         updateGrandPrice();
     });
 }
-
-function checkNameAndPhone(){
-    const name = document.getElementById("name").value;
-    console.log(name);
-    const phone = document.getElementById("phone").value;
-    console.log("hello");
-    if((name == "") && (phone == "")){
-        alert("Please input your name and phone number.")
-        console.log("ok");
-    }
-    else {
-        const navSection = document.getElementsById('nav');
-        const bannerSection = document.getElementsById('banner');
-        const couponSection = document.getElementsById('coupon');
-        const ticketSection = document.getElementsById('ticket');
-        const footerSection = document.getElementsById('footer');
-        const successSection = document.getElementById('success')
-
-        console.log(navSection.classList.add('hidden'));
-
-        bannerSection.classList.add('hidden');
-        couponSection.classList.addd('hidden');
-        ticketSection.classList.add('hidden');
-        footerSection.classList.add('hidden');
-        successSection.classList.remove('hidden');
-    }
-
-}
-
+// calculate Total price.
 function updateTotalPrice(value){
     const totalPrice = parseInt(document.getElementById("Total-price").innerText);
     const sum = totalPrice + parseInt(value);
@@ -82,6 +54,7 @@ function updateTotalPrice(value){
     document.getElementById("Total-price").innerText = sum;
 
 }
+// check, calculate discount, and set GrandPrice.
 function updateGrandPrice(status){
     const totalPrice = parseInt(document.getElementById("Total-price").innerText);
     if(status == undefined){
@@ -93,8 +66,6 @@ function updateGrandPrice(status){
         if(couponCode == "NEW15"){
             const discount = totalPrice * .15;
             document.getElementById("grand-total").innerText = totalPrice - discount;
-
-
         }
         else if(couponCode == "Couple 20"){
             const discount = totalPrice * .2;
@@ -107,7 +78,7 @@ function updateGrandPrice(status){
 
     }
 }
-
+// converter innerText(string) to int.
 function getConvertedValue(id){
     const price = document.getElementById(id).innerText;
     const coverPrice = parseInt(price);
