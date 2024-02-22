@@ -44,8 +44,10 @@ for(const s of allSeat){
         selectedSeatContainer.appendChild(div);
         updateTotalPrice(price);
         updateGrandPrice();
+        check();
     });
-}
+};
+
 // calculate Total price.
 function updateTotalPrice(value){
     const totalPrice = parseInt(document.getElementById("Total-price").innerText);
