@@ -14,7 +14,7 @@ for(const s of allSeat){
 
         const firstSeatCounter = getConvertedValue("seat-count");
         if((firstSeatCounter+1) > 4){
-            alert("Limit Exit..!!");
+            alert("Limit exceeded..!!");
             document.getElementById("seat-left").innerText = totalSeat--;
             return;
         }
